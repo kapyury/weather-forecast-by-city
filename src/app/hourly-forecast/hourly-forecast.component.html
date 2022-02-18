@@ -1,0 +1,12 @@
+<div *ngIf="data">
+    <div class="table-container" role="table" aria-label="Hours">
+        <div class="flex-table header" role="rowgroup">
+        <div class="flex-row first" role="columnheader">City Name</div>
+        <div class="flex-row" role="columnheader" *ngFor="let entry of data.first">{{entry}}</div>
+      </div>
+      <div class="flex-table row" role="rowgroup">
+        <div class="flex-row first" role="cell">{{data.city}}</div>
+        <div class="flex-row" role="cell"  *ngFor="let entry of data.second">{{entry}}&#176;</div>
+      </div>
+    </div>
+</div>

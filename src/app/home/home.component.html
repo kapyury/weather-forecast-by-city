@@ -1,0 +1,26 @@
+<h1 class="title">Welcom to weather forecast app</h1>
+<mat-form-field class="search-field" appearance="fill">
+  <input matInput type="search" placeholder="City" value="" #searchField />
+  <mat-icon matSuffix (click)="searchCity()">search</mat-icon>
+</mat-form-field>
+<mat-error
+  [hidden]="!error"
+  [ngStyle]="{ 'margin-left': '20px', 'margin-top': '-30px' }"
+  >{{ error }}</mat-error
+>
+<div class="actions">
+  <button mat-raised-button color="primary" (click)="hourlyForecast()">
+    hourly
+  </button>
+  <button mat-raised-button color="primary" (click)="dailyForecast()">
+    daily
+  </button>
+</div>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
+<router-outlet></router-outlet>
